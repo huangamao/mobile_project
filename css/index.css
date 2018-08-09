@@ -1,0 +1,428 @@
+/*用BEM方式去写*/
+
+.header{
+    /*height:80px;*/
+    background: #f7f7f7;
+    position:relative;
+}
+/*wrap容器把导航条包裹进去*/
+.header__wrap{
+    height:80px; /*继承父元素高度*/
+    width:1200px;
+    position:relative;
+    margin:0 auto;/*水平集中*/
+}
+.header__logo{
+    width:150px;
+    height:38px;
+    line-height:38px;/*文字垂直居中*/
+    font-size:20px;
+    color:#07111b;
+    /*这里因为上面已经定了宽，这里如果用padding上面的宽就要修改*/
+    text-indent:50px;
+    background:url('../img/logo.png') left center no-repeat;
+    background-size:38px 38px;
+    /*logo图标垂直居中*/
+    top:50%;
+    margin-top:-19px;
+    left:20px;
+    position:absolute;
+    /*wrap容器把导航条包裹进去*/
+}
+.header__nav{
+    position:absolute;
+    right:20px;
+    height:38px;
+    top:50%;
+    margin-top:-19px;
+}
+/*其实里面有若干元素，可以把导航和导航元素放在同一级别，因为整个导航和其他元素没有什么区别*/
+.header__nav-item{
+    color:#292f35;
+    font-size:14px;
+    display:block; /*下面可以设置宽高*/
+    float:left;
+    width:30px;
+    text-align:center;
+    line-height:38px;
+    position:relative;
+    padding-left:40px;
+}
+/*活跃状态*/
+.header__nav-item_status_active{
+    color:#f01400;
+}
+
+/*针对立即购买这个标签专门写样式*/
+.header__nav-item_custom_button{
+    background:#000;
+    line-height:38px;
+    color:#f4f4f5;
+    width:70px;/*上面已经改为block*/
+    border-radius:5px;
+    text-align:center;
+    padding:0;
+    margin-left:40px;
+}
+.header__nav-item:hover{
+    color:#f01400;
+}
+
+/*第一屏*/
+.screen-1{
+    height:800px;
+    background-color:#ececec;
+    background:url(../img/bg-screen-1.png) no-repeat center bottom;
+    overflow:hidden;
+    position:relative;
+    background-size:cover;
+}
+.screen-1__heading{
+    font-weight:normal;
+    padding:0;/*防止该部分和header之间有缝隙*/
+    margin:0;
+    font-size:46px;
+    color:#4d555d;
+    text-align:center;
+    padding-top:152px;
+}
+.screen-1__heading b{
+    color:#f01400;
+    font-weight:normal;
+} 
+.screen-1__phone{
+    width:1375px;
+    height:305px;
+    background:url(../img/screen-1-phone.png) no-repeat center;
+    bottom:180px;
+    position:absolute;/*手机太大,让手机漂浮起来，不会影响文档流*/
+    left:50%;
+    margin-left:-687px;
+    z-index:2;
+}
+.screen-1__shadow{
+    width:1233px;
+    height:411px;
+    background:url(../img/screen-1-shadow.png) no-repeat center;
+    position:absolute;
+    left:50%;
+    margin-left:-616px;
+    bottom:30px;
+    z-index:1;/*理论上不能超过3，所以要调节*/
+    opacity:.8;
+}
+
+/*第二屏*/
+.screen-2{
+    background-color:#fafafa;
+    height:800px;
+    overflow:hidden;
+    position:relative;
+}
+
+.screen-2__heading{
+    font-weight:normal;
+    padding:0;/*防止该部分和header之间有缝隙*/
+    margin:0;
+    font-size:46px;
+    line-height:46px;
+    color:#f01400;
+    text-align:center;
+    padding-top:96px;
+}
+.screen-2__subheading{
+    font-weight:normal;
+    padding:0;/*防止该部分和header之间有缝隙*/
+    margin:0;
+    font-size:14px;
+    color:#2c3137;
+    text-align:center;
+    padding-top:25px;
+    line-height:28px;
+}
+.screen-2__phone{
+    width:928px;
+    height:873px;
+    background:url(../img/bg-screen-2.png) no-repeat center;
+    bottom:-345px;
+    position:absolute;/*手机太大,让手机漂浮起来，不会影响文档流*/
+    left:50%;
+    margin-left:-464px;
+    z-index:2;
+}
+/*红点*/
+.screen-2__point{
+    width:108px;
+    height:22px;
+    padding-right:112px;
+    font-size:22px;
+    line-height:22px;
+    color:#4d555d;
+    position:absolute;/*一定要去进行定位，才能进行接下来的事物*/
+    background:url(../img/icon-point-right.png) no-repeat center right;
+}
+.screen-2__point_custom_right{
+    padding:0 0 0 112px;
+    background:url(../img/icon-point-left.png) no-repeat center left;
+}
+.screen-2__point_i_1{
+    top:150px;
+    left:-164px;
+}
+.screen-2__point_i_2{
+    top:30px;
+    right:130px;
+}
+.screen-2__point_i_3{
+    top:330px;
+    right:30px;
+}
+/*第三屏*/
+.screen-3{
+    height:800px;
+    position:relative;
+    background: url(../img/bg-screen-1.png) no-repeat center bottom;
+    overflow:hidden;
+    background-size:cover;
+}
+.screen-3__wrap{
+    width:1200px;
+    height:auto;/*跟着内容走*/
+    margin:0 auto;
+    position:relative;
+}
+.screen-3__heading{
+    font-size:46px;
+    line-height:46px;
+    color:#f01400;
+    text-align:left;
+    padding-top:96px;
+}
+.screen-3__subheading{
+    font-size:14px;
+    color:#2c3137;
+    text-align:left;
+    padding-top:25px;
+    line-height:28px;
+}
+.screen-3__phone{
+    width:750px;
+    height:873px;
+    background:url(../img/bg-screen-3.png) no-repeat center top;
+    position:absolute;
+    right:0;
+    top:195px;
+    z-index:2;
+}
+.screen-3__features{
+    position:absolute;
+    top:395px;
+    left:0;
+    width:320px;
+    height:280px;
+    position:absolute;
+}
+.screen-3__features__item{
+    width:138px;
+    height:118px;
+    border:1px solid #cb7173;
+    margin:0 20px 20px 0;
+    float:left;
+    border-radius:3px;
+    
+}
+.screen-3__features__item_number{
+    height:36px;
+    line-height:36px;
+    font-size:36px;
+    text-align:center;
+    padding:28px 0 8px;
+}
+.screen-3__features__item_desc{
+    height:14px;
+    line-height:14px;
+    font-size:14spx;
+    text-align:center;
+}
+
+/*第四屏*/
+.screen-4{
+    background-color:#fff;
+    height:800px;
+    position:relative;
+    overflow: hidden;
+}
+.screen-4__wrap{
+    width:1200px;
+    height:auto;/*跟着内容走*/
+    margin:0 auto;
+    position:relative;
+}
+.screen-4__heading{
+    font-size:46px;
+    line-height:46px;
+    color:#f01400;
+    text-align:center;
+    padding-top:135px;
+}
+.screen-4__subheading{
+    font-size:14px;
+    color:#464a4f;
+    text-align:center;
+    padding-top:29px;
+    line-height:28px;
+}
+.screen-4__type{
+    width:1260px;
+    height:270px;
+    position:absolute;
+    top:304px;
+    margin-left:28px;
+}
+.screen-4__type__item{
+    width:220px;
+    margin-right:90px;
+    height:270px;
+    float:left;
+    position:relative;/*预设文字的位置*/
+    text-align:center;
+}
+.screen-4__type__item__color{
+    width:100%;
+    height:14px;
+    line-height:14px;
+    font-size:14px;
+    color:#2c3238;
+    position:absolute;
+    bottom:-44px;/*文字底部距上面的距离*/
+}
+.screen-4__type__item_i_1{
+    /*利用背景图模式*/
+    background:url(../img/phone-1.png) no-repeat left top;
+}
+.screen-4__type__item_i_2{
+    background:url(../img/phone-2.png) no-repeat left top;
+}
+.screen-4__type__item_i_3{
+    background:url(../img/phone-3.png) no-repeat left top;
+}
+.screen-4__type__item_i_4{
+    background:url(../img/phone-4.png) no-repeat left top;
+}
+
+.screen-4__type__item__color__storage{
+    width:100%;
+    height:12px;
+    line-height:12px;
+    font:12px;
+    color:#a4a9ae;
+    position:absolute;
+    bottom:-66px;
+}
+
+/*第五屏*/
+.screen-5{
+    background-color:#d9dde1;
+    height:800px;
+    position:relative;
+    overflow:hidden;
+}
+.screen-5__bg{
+    background:url(../img/bg-screen-5.png) no-repeat center bottom;
+    height:433px;
+    width:1920px;
+    background-size:contain;
+    position:absolute;
+    bottom:-100px;
+    left:50%;
+    margin-left:-960px;
+}
+.screen-5__heading{
+    font-size:46px;
+    line-height:46px;
+    color:#f01400;
+    text-align:center;
+    padding-top:130px;
+}
+.screen-5__subheading{
+    font-size:14px;
+    color:#2c3137;
+    text-align:center;
+    padding-top:25px;
+    line-height:28px;
+}
+
+/*立即购买*/
+.screen-buy{
+    background:#2b333b url(../img/bg-screen-buy.png) center no-repeat;
+    height:80px;
+    padding:120px 0;
+    position:relative;
+    overflow: hidden;
+    text-align:center;
+}
+.screen-buy__button{
+    width:240px;
+    height:80px;
+    line-height:80px;
+    font-size:24px;
+    color:#fff;
+    background-color:#f01414;
+    display:inline-block;/*行内元素享受宽高，上面可以设置高并用padding的形式写出来*/
+    border-radius:3px;
+    transition: all .5s;
+}
+.screen-buy__button:hover{
+    box-shadow:0px 0px 10px rgb(0,0,0,.5);/*这样10就平均分配*/
+}
+
+.footer{
+    background-color:#07111b;
+    height:80px;
+    line-height:80px;
+    color:#fff;
+    font-size:12px;
+    text-align:center;
+}
+
+/*页面导航条*/
+.outline{
+    position:fixed;
+    padding:5px 10px;
+    bottom:120px;
+    right:3px;
+    z-index:3;
+    background-color:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,.5);
+}
+.outline__item{
+    display:block;
+    width:40px;
+    height:30px;
+    line-height:30px;
+    padding:5px 0;
+    text-align:center;
+    background-color:#fff;
+    margin-top:5px;
+    border-top:1px solid #eee;
+    color:#93999f;
+}
+
+.outline__item:first-child{
+    border:none;
+}
+.outline__item_status_active{
+    color:red;
+}
+
+/*滑动门*/
+.header__nav-tip{
+    position:absolute;
+    width:30px;
+    height:2px;
+    background:#f00;
+    bottom:0;
+    left:0;
+    margin-left:40px;
+    transition:all .5s;
+}
